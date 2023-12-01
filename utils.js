@@ -14,11 +14,15 @@ const getRandomQuetion = (topic) => {
     questionTopic = Object.keys(questions)[random.integer(0, Object.keys(questions).length-1)]
   }
 
-  const randomQuetionIndex = random.integer(0, questions[questionTopic].length-1)
+  const randomQuestionIndex = random.integer(
+    0,
+    questions[questionTopic].length - 1,
+  );
+  console.log(randomQuestionIndex)
   
 
   return {
-    question: questions[questionTopic][randomQuetionIndex],
+    question: questions[questionTopic][randomQuestionIndex],
     questionTopic,
   };
 

@@ -16,7 +16,7 @@ bot.command("start", async (ctx) => {
     .text("CSS")
     .row()
     .text("JavaScript")
-    .text("React.js")
+    .text("React")
     .row()
     .text("Случайный вопрос")
     .resized();
@@ -29,8 +29,8 @@ bot.command("start", async (ctx) => {
   });
 });
 
-bot.hears(["HTML", "CSS", "JavaScript", "React.js", "Случайный вопрос"], async (ctx) => {
-  const topic = ctx.message.text.toLocaleLowerCase();
+bot.hears(["HTML", "CSS", "JavaScript", "React", "Случайный вопрос"], async (ctx) => {
+  const topic = ctx.message.text.toLowerCase();
 
   const {question, questionTopic} = getRandomQuetion(topic);
 
@@ -38,7 +38,7 @@ bot.hears(["HTML", "CSS", "JavaScript", "React.js", "Случайный вопр
 
   if (question.hasOptions) {
     const buttonRows = question.options.map((option) => [
-      inlineKeyboard.text(
+      InlineKeyboard.text(
         option.text,
         JSON.stringify({
           type: `${questionTopic}-option`,
