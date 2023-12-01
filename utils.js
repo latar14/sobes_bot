@@ -7,7 +7,7 @@ const getRandomQuetion = (topic) => {
     const random = new Random();
 
 
-  let questionTopic = topic.toLowwerCase();
+  let questionTopic = topic.toLowerCase();
 
   if (questionTopic === 'случайный вопрос') {
 
