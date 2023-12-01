@@ -18,7 +18,6 @@ const getRandomQuetion = (topic) => {
     0,
     questions[questionTopic].length - 1,
   );
-  console.log(randomQuestionIndex)
   
 
   return {

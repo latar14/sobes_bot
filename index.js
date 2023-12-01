@@ -84,7 +84,7 @@ bot.on("callback_query:data", async (ctx) => {
   }
 
   const answer = getCorrectAnswer(
-    callbackData.split("-")[0],
+    callbackData.type.split('-')[0],
     callbackData.questionId
   );
   await ctx.reply(`Неверно ❌. Правильный ответ: ${answer}`);
